@@ -1,6 +1,2 @@
-﻿  Clienti.cpp
-  Source.cpp
-  Generating Code...
-C:\Users\catal\OneDrive\Desktop\eu\1.Facultate\POO\Proiect\Proiect\Proiect\Clienti.cpp(184): warning C4715: 'Clienti::getNrDeTelefonClient': not all control paths return a value
-C:\Users\catal\OneDrive\Desktop\eu\1.Facultate\POO\Proiect\Proiect\Proiect\Clienti.cpp(197): warning C4715: 'Clienti::getRezervari': not all control paths return a value
+﻿  cumparaBilet.cpp
   Proiect.vcxproj -> C:\Users\catal\OneDrive\Desktop\eu\1.Facultate\POO\Proiect\Proiect\Debug\Proiect.exe

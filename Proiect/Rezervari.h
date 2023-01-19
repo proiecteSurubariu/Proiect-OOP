@@ -2,6 +2,8 @@
 #include<iostream>
 #include<string>
 #include"Eveniment.h"
+#include"Clienti.h"
+#include"cumparaBilet.h"
 using namespace std;
 
 class Rezervari
@@ -10,7 +12,7 @@ private:
 	int* locuriRezervate;
 	int nrlocuriRezervate;
 	Eveniment eveniment;
-	
+	Clienti client;
 public:
 
 	Rezervari() {
@@ -18,7 +20,7 @@ public:
 		nrlocuriRezervate = 0;
 	}
 
-	Rezervari( int* locuriRezervate, int nrlocuriRezervate, Eveniment& eveniment) {
+	Rezervari( int* locuriRezervate, int nrlocuriRezervate,Clienti& client, Eveniment& eveniment) {
 		if (locuriRezervate != nullptr && nrlocuriRezervate > 0)
 		{
 			this->locuriRezervate = new int[nrlocuriRezervate];
@@ -34,6 +36,8 @@ public:
 			this->nrlocuriRezervate = 0;
 		}
 		this->eveniment = eveniment;
+		this->client = client;
+		
 	}
 
 	Rezervari(const Rezervari& r) {
@@ -50,6 +54,7 @@ public:
 			this->nrlocuriRezervate = 0;
 		}
 		this->eveniment = r.eveniment;
+		this->client = r.client;
 	}
 
 	~Rezervari() {
@@ -62,8 +67,12 @@ public:
 	int* getlocuriRezervate();
 	int getnrlocuriRezervate();
 	Eveniment getEveniment();
+	Clienti getClient();
 	void setlocuriRezervate(int*, int);
 	void setEveniment(Eveniment);
+	void setClient(Clienti);
+	int getRand(int);
+	int getLoc(int);
 
 
 	Rezervari& operator=(const Rezervari&);
@@ -74,8 +83,9 @@ public:
 	friend ostream& operator<<(ostream& out, Rezervari r);
 	friend istream& operator>>(istream& in, Rezervari& r);
 
-	float pretTotal();
-	void oferta();
+	virtual float pretTotal();
+	virtual void oferta();
+	friend class cumparaBilet;
 	
 };
 

@@ -36,15 +36,15 @@ bool Eveniment::operator>(Eveniment e) {
 
 
 ostream& operator<<(ostream& out, Eveniment e) {
-	cout << endl << "Nume Eveniment: ";
+	cout << endl << "\n\n\t\tNume Eveniment: ";
 	out << e.numeEveniment;
-	cout << endl << "Locatie Eveniment: ";
+	cout << endl << "\n\n\t\tLocatie Eveniment: ";
 	out << e.locatie;
-	cout << endl << "Data eveniment: ";
+	cout << endl << "\n\n\t\tData eveniment: ";
 	out << e.data;
-	cout << endl << "Ora eveniment: ";
+	cout << endl << "\n\n\t\tOra eveniment: ";
 	out << e.ora;
-	cout << endl << "Pret Eveniment:";
+	cout << endl << "\n\n\t\tPret Eveniment:";
 	
 	out << e.pret;
 	cout << endl;
@@ -52,20 +52,20 @@ ostream& operator<<(ostream& out, Eveniment e) {
 }
 istream& operator>>(istream& in, Eveniment& e)
 {
-	cout << endl << "Nume Eveniment: ";
+	cout << endl << "\n\n\t\tNume Eveniment: ";
 	in >> e.numeEveniment;
-	cout << endl << "Locatie Eveniment: ";
+	cout << endl << "\n\n\t\tLocatie Eveniment: ";
 	in >> e.locatie;
-	cout << endl << "Data Eveniment: ";
+	cout << endl << "\n\n\t\tData Eveniment: ";
 	in >> e.data;
-	cout << endl << "Ora Eveniment: ";
+	cout << endl << "\n\n\t\tOra Eveniment: ";
 	in >> e.ora;
-	cout << endl << "Pret Eveniment: "<<endl;
+	cout << endl << "\n\n\t\tPret Eveniment: "<<endl;
 	float pr=0;
 	
 	do  {
 		cin >> pr;
-		if (pr < 1)cout << "Pret invalid. Introduceti alt pret." << endl;
+		if (pr < 1)cout << "\n\n\t\tPret invalid. Introduceti alt pret." << endl;
 	} while (pr < 1);
 	e.pret = pr;
 	
@@ -97,7 +97,7 @@ void Eveniment::setNumeEveniment(string numeEveniment) {
 	}
 
 	else {
-		cout << endl << "Numele evenimentului introdus nu este valid" << endl;
+		cout << endl << "\n\n\t\tNumele evenimentului introdus nu este valid" << endl;
 	}
 
 }
@@ -106,7 +106,7 @@ void Eveniment::setLocatieEveniment(string locatie) {
 		this->locatie = locatie;
 	}
 	else {
-		cout << endl << "Locatia evenimentului introdus nu este valida" << endl;
+		cout << endl << "\n\n\t\tLocatia evenimentului introdus nu este valida" << endl;
 	}
 	
 }
@@ -115,18 +115,18 @@ void Eveniment::setDataEveniment(string data) {
 		this->data = data;
 		
 	}
-	else cout << endl << "Data evenimentului nu e valida" << endl;
+	else cout << endl << "\n\n\t\tData evenimentului nu e valida" << endl;
 }
 void Eveniment::setOraEveniment(string ora) {
 	if (ora.length() ==5) {
 		this->ora = ora;
 	}
-	else cout << endl << "Ora introdusa nu e valida" << endl;
+	else cout << endl << "\n\n\t\tOra introdusa nu e valida" << endl;
 }
 void Eveniment::setPretEveniment(float pret) {
 	if (pret>0) { this->pret = pret; }
 	else {
-		cout << endl << "Pretul introdus nu este valid" << endl;
+		cout << endl << "\n\n\t\tPretul introdus nu este valid" << endl;
 	}
 }
 

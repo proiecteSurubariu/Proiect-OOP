@@ -14,6 +14,7 @@ Rezervari& Rezervari::operator=(const Rezervari& r) {
 		}
 
 		this->eveniment = r.eveniment;
+		this->client = r.client;
 	}
 
 	return *this;
@@ -31,39 +32,35 @@ bool Rezervari::operator!() {
 ostream& operator<<(ostream& out, Rezervari r) {
 
 	if (r.nrlocuriRezervate > 0 && r.locuriRezervate != nullptr) {
-		cout << endl << "Numarul de locuri rezervate: ";
+		cout << endl << "\n\n\t\tNumarul de locuri rezervate: ";
 		out << r.nrlocuriRezervate;
-		cout << endl << "Locurile rezervate sunt: ";
+		cout << endl << "\n\n\t\tLocurile rezervate sunt: ";
 		for (int i = 0; i < r.nrlocuriRezervate; i++) {
 			out << r.locuriRezervate[i] << " ";
 		}
 	}
-	else cout << endl << "Nu exista locuri rezervate";
+	else cout << endl << "\n\n\t\tNu exista locuri rezervate";
 	cout << endl;
-	cout << "Evenimentul este: ";
+	cout << "\n\n\t\tEvenimentul este: ";
 	out << r.eveniment;
+	cout << endl;
+
+	cout << "\n\n\t\tClientul este: ";
+	out << r.client;
 	cout << endl;
 	return out;
 
 }
 istream& operator>>(istream& in, Rezervari& r) {
-	//Momentan am facut asa pentru testare, in partea a doua voi gasi o solutie:)
-	cout << "1." << r.eveniment << endl;
-	cout << "Introduceti numarul aferent evenimentului: " << endl;
+	
+	
 	int x = 0;
+	int rand;
+	int loc;
+	cout << "\n\n\t\tAlegeti cate locuri doriti sa rezervati: " << endl;
+	cout << endl << "\n\n\t\t";
 	cin >> x;
-	switch (x)
-	{
-	case 1:
-		cout << r.eveniment << endl;
-	default:
-
-		break;
-	}
-
-	cout << "Numarul de locuri rezervate: " << endl;
-	cin >> x;
-	if (x < 1)cout << "Numar invalid.";
+	if (x < 1)cout << "\n\n\t\tNumar invalid.";
 	else r.nrlocuriRezervate = x;
 
 	if (r.nrlocuriRezervate > 0) {
@@ -72,9 +69,17 @@ istream& operator>>(istream& in, Rezervari& r) {
 		}
 
 		r.locuriRezervate = new int[r.nrlocuriRezervate];
-		cout << "Locurile rezervate: " << endl;
+		cout << "\n\n\t\tLocurile rezervate: " << endl;
 		for (int i = 0; i < r.nrlocuriRezervate; i++) {
-			in >> r.locuriRezervate[i];
+			cout << endl << "\n\n\t\tRand: ";
+			
+			cin >> rand;
+			cout << endl << "\n\n\t\tLoc: ";
+			
+			cin >> loc;
+			cout << endl << "\n\n\t\t";
+			 r.locuriRezervate[i]=rand*10+loc;
+			 
 			cout << " ";
 		}
 	}
@@ -99,7 +104,16 @@ Eveniment Rezervari::getEveniment() {
 	Eveniment copy = eveniment;
 	return copy;
 }
-
+Clienti Rezervari::getClient() {
+	Clienti copy = client;
+	return copy;
+}
+int Rezervari::getRand(int i) {
+	return locuriRezervate[i] / 10 - 1;
+}
+int Rezervari::getLoc(int i) {
+	return locuriRezervate[i] % 10 - 1;
+}
 
 
 void Rezervari::setlocuriRezervate(int* locuriRezervate, int nrlocuriRezervate) {
@@ -116,7 +130,7 @@ void Rezervari::setlocuriRezervate(int* locuriRezervate, int nrlocuriRezervate) 
 	}
 	else {
 		cout << endl;
-		cout << "Datele introduse sunt invalide" << endl;
+		cout << "\n\n\t\tDatele introduse sunt invalide" << endl;
 	}
 
 }
@@ -125,7 +139,16 @@ void Rezervari::setEveniment(Eveniment e) {
 		this->eveniment = e;
 	}
 	else {
-		cout << endl << "Evenimentul nu este valid." << endl;
+		cout << endl << "\n\n\t\tEvenimentul nu este valid." << endl;
+	}
+}
+
+void Rezervari::setClient(Clienti e) {
+	if (strlen(e.getNumeClient()) > 1 && strlen(e.getPrenumeClient()) > 1 && strlen(e.getNrDeTelefonClient()) == 10  ) {
+		this->client = e;
+	}
+	else {
+		cout << endl << "\n\n\t\tClientul nu este valid." << endl;
 	}
 }
 

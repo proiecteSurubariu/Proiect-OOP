@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include <string>
+
 using namespace std;
 
 
@@ -12,6 +13,7 @@ private:
 	string data;
 	string ora;
 	float pret;
+	
 
 public:
 
@@ -26,6 +28,13 @@ public:
 	Eveniment(string numeEveniment, string locatie, float pret) :Eveniment() {
 		this->numeEveniment = numeEveniment;
 		this->locatie = locatie;
+		this->pret = pret;
+	}
+	Eveniment(string numeEveniment, string locatie,string data,string ora, float pret) :Eveniment() {
+		this->numeEveniment = numeEveniment;
+		this->locatie = locatie;
+		this->data = data;
+		this->ora = ora;
 		this->pret = pret;
 	}
 
@@ -68,4 +77,5 @@ public:
 	Eveniment operator++(int x);
 	bool operator<(Eveniment);
 	bool operator>(Eveniment);
+	friend class cumparaBilet;
 };

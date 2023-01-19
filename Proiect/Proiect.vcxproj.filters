@@ -27,6 +27,12 @@
     <ClCompile Include="Rezervari.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cumparaBilet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Film.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Eveniment.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rezervari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cumparaBilet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Film.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
